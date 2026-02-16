@@ -2,165 +2,862 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>First Sponsors</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>First Sponsors | Sponsorships for Growing Creators</title>
+  <meta name="description" content="First Sponsors helps emerging creators connect with aligned brands, run smooth sponsorship campaigns, and grow recurring revenue.">
+  <meta name="keywords" content="First Sponsors, creator sponsorships, influencer marketing, brand deals, creator growth">
+  <meta name="author" content="First Sponsors">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1d4ed8">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="First Sponsors">
+  <meta property="og:title" content="First Sponsors | Sponsorships for Growing Creators">
+  <meta property="og:description" content="Turn creator momentum into meaningful sponsor partnerships with First Sponsors.">
+  <meta property="og:url" content="https://www.firstsponsors.com/">
+  <meta property="og:image" content="logo3.PNG">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="First Sponsors | Sponsorships for Growing Creators">
+  <meta name="twitter:description" content="Connect with the right brands, track campaign performance, and grow sponsorship revenue.">
+  <meta name="twitter:image" content="logo3.PNG">
+  <link rel="canonical" href="https://www.firstsponsors.com/">
+  <link rel="icon" href="logo1.PNG">
+  <link rel="preload" href="logo4.PNG" as="image" fetchpriority="high">
   <style>
-    /* Reset & Base */
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-    body { background-color: #f5f7fa; color: #1f2937; line-height: 1.6; }
-
-    /* Header */
-    header {
-      background: #ffffff;
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    :root {
+      --font-sans: "Inter", "Avenir Next", "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+      --color-bg: #f8fbff;
+      --color-surface: #ffffff;
+      --color-text: #0f172a;
+      --color-muted: #475569;
+      --color-primary: #1d4ed8;
+      --color-primary-strong: #12389b;
+      --color-primary-soft: #dbeafe;
+      --color-border: #bfdbfe;
+      --color-footer: #08163f;
+      --radius-sm: 12px;
+      --radius-md: 18px;
+      --radius-lg: 24px;
+      --shadow-soft: 0 10px 28px rgba(30, 64, 175, 0.15);
+      --shadow-card: 0 16px 32px rgba(30, 64, 175, 0.14);
+      --shadow-hero: 0 24px 44px rgba(15, 23, 42, 0.26);
+      --container-max: 1120px;
     }
-    header img { height: 50px; }
-    header nav a {
-      margin-left: 20px;
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-sans);
+      line-height: 1.65;
+      color: var(--color-text);
+      background: linear-gradient(180deg, #eef5ff 0%, var(--color-bg) 35%, #ffffff 100%);
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    section[id],
+    footer[id] {
+      scroll-margin-top: 5rem;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 1rem;
+      top: -120%;
+      z-index: 999;
+      padding: 0.7rem 1rem;
+      background: var(--color-primary);
+      color: #ffffff;
+      border-radius: 10px;
       text-decoration: none;
-      color: #1f2937;
       font-weight: 600;
     }
-    header nav a:hover { color: #2563eb; }
 
-    /* Hero Section */
-    .hero {
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+    .container {
+      width: min(100% - 2rem, var(--container-max));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(191, 219, 254, 0.8);
+      background: rgba(255, 255, 255, 0.86);
+      backdrop-filter: blur(9px);
+    }
+
+    .nav-row {
+      min-height: 4.5rem;
       display: flex;
-      flex-direction: column;
       align-items: center;
-      text-align: center;
-      padding: 80px 20px 100px 20px;
-      background: linear-gradient(90deg, #2563eb 0%, #3b82f6 100%);
-      color: #fff;
+      justify-content: space-between;
+      gap: 1rem;
     }
-    .hero h1 { font-size: 3rem; margin-bottom: 20px; }
-    .hero p { font-size: 1.2rem; max-width: 600px; margin-bottom: 30px; }
-    .hero button {
-      padding: 15px 30px;
-      font-size: 1rem;
-      font-weight: 600;
-      color: #fff;
-      background-color: #1e40af;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-    .hero button:hover { background-color: #4338ca; }
 
-    /* Features Section */
-    .features {
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--color-primary-strong);
+      letter-spacing: 0.01em;
+    }
+
+    .brand img {
+      width: 2.3rem;
+      height: 2.3rem;
+      object-fit: contain;
+      border-radius: 10px;
+      background: #ffffff;
+      box-shadow: 0 6px 16px rgba(29, 78, 216, 0.24);
+      padding: 0.18rem;
+    }
+
+    .nav-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px;
-      padding: 60px 20px;
-      background-color: #f5f7fa;
+      gap: 0.2rem;
+      justify-content: flex-end;
     }
-    .feature {
-      background: #ffffff;
-      padding: 30px;
-      border-radius: 12px;
-      width: 300px;
-      text-align: center;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-      transition: transform 0.3s;
-    }
-    .feature:hover { transform: translateY(-8px); }
-    .feature img { height: 60px; margin-bottom: 20px; }
-    .feature h3 { font-size: 1.4rem; margin-bottom: 10px; }
-    .feature p { font-size: 1rem; color: #4b5563; }
 
-    /* CTA Section */
-    .cta {
-      background-color: #2563eb;
-      color: #fff;
-      text-align: center;
-      padding: 80px 20px;
-    }
-    .cta h2 { font-size: 2.5rem; margin-bottom: 20px; }
-    .cta button {
-      padding: 15px 30px;
-      font-size: 1rem;
+    .nav-list a {
+      text-decoration: none;
+      color: var(--color-muted);
       font-weight: 600;
-      color: #2563eb;
-      background-color: #fff;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-    .cta button:hover { background-color: #e5e7eb; }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-      color: #6b7280;
-      background-color: #f5f7fa;
+      font-size: 0.95rem;
+      border-radius: 999px;
+      padding: 0.44rem 0.75rem;
+      transition: color 0.25s ease, background-color 0.25s ease, transform 0.25s ease;
     }
 
-    /* Responsive */
-    @media(max-width:768px){
-      .features { flex-direction: column; align-items: center; }
-      .hero h1 { font-size: 2.2rem; }
+    .nav-list a:hover,
+    .nav-list a:focus-visible {
+      color: var(--color-primary);
+      background: #eaf2ff;
+      transform: translateY(-1px);
+    }
+
+    .section {
+      padding-block: 4.4rem;
+    }
+
+    .section-kicker {
+      margin: 0;
+      color: var(--color-primary);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .section-heading {
+      margin: 0.6rem 0 0;
+      font-size: clamp(1.6rem, 2.5vw, 2.35rem);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .section-intro {
+      margin: 0.9rem 0 0;
+      color: var(--color-muted);
+      max-width: 58ch;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding-block: 5.2rem 4.4rem;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .hero::before {
+      width: 17rem;
+      height: 17rem;
+      right: -5rem;
+      top: -4.5rem;
+      background: radial-gradient(circle at 30% 30%, rgba(37, 99, 235, 0.34), rgba(37, 99, 235, 0));
+    }
+
+    .hero::after {
+      width: 16rem;
+      height: 16rem;
+      left: -5rem;
+      bottom: -6.5rem;
+      background: radial-gradient(circle at 55% 50%, rgba(56, 189, 248, 0.28), rgba(56, 189, 248, 0));
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .hero h1 {
+      margin: 0.65rem 0 0;
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      max-width: 16ch;
+    }
+
+    .hero-subheadline {
+      margin: 1rem 0 0;
+      color: var(--color-muted);
+      max-width: 58ch;
+      font-size: 1.04rem;
+    }
+
+    .hero-actions {
+      margin-top: 1.4rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 0.78rem 1.2rem;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, filter 0.28s ease, background-color 0.28s ease;
+    }
+
+    .btn-primary {
+      color: #ffffff;
+      background: linear-gradient(140deg, var(--color-primary) 0%, #3b82f6 100%);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .btn-secondary {
+      background: #ffffff;
+      color: var(--color-primary);
+      border-color: var(--color-border);
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 28px rgba(29, 78, 216, 0.22);
+      filter: brightness(1.02);
+    }
+
+    .hero-metrics {
+      margin-top: 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+    }
+
+    .metric {
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      padding: 0.8rem;
+    }
+
+    .metric strong {
+      display: block;
+      color: var(--color-primary-strong);
+      font-size: 1.12rem;
+      line-height: 1.2;
+    }
+
+    .metric span {
+      display: block;
+      margin-top: 0.2rem;
+      color: var(--color-muted);
+      font-size: 0.84rem;
+    }
+
+    .hero-panel {
+      border-radius: var(--radius-lg);
+      padding: 1.3rem 1.15rem;
+      color: #eaf2ff;
+      background: linear-gradient(160deg, #0e2d84 0%, #1947b8 46%, #2463de 100%);
+      box-shadow: var(--shadow-hero);
+    }
+
+    .hero-panel h2 {
+      margin: 0;
+      color: #ffffff;
+      font-size: 1.22rem;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-panel p {
+      margin: 0.45rem 0 0;
+      color: #d6e4ff;
+      font-size: 0.94rem;
+    }
+
+    .hero-panel ul {
+      margin: 1rem 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 0.72rem;
+    }
+
+    .hero-panel li {
+      border: 1px solid rgba(191, 219, 254, 0.35);
+      border-radius: 12px;
+      padding: 0.74rem;
+      background: rgba(255, 255, 255, 0.08);
+      color: #e2ebff;
+      font-size: 0.92rem;
+    }
+
+    .hero-panel strong {
+      color: #ffffff;
+    }
+
+    .features-grid {
+      margin-top: 1.55rem;
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .feature-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-primary-soft);
+      border-radius: var(--radius-md);
+      padding: 1.2rem;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature-card:hover,
+    .feature-card:focus-within {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 30px rgba(29, 78, 216, 0.22);
+    }
+
+    .icon-badge {
+      width: 2.6rem;
+      height: 2.6rem;
+      border-radius: 10px;
+      display: inline-grid;
+      place-items: center;
+      margin-bottom: 0.75rem;
+      background: linear-gradient(145deg, rgba(29, 78, 216, 0.2), rgba(59, 130, 246, 0.12));
+      color: var(--color-primary-strong);
+    }
+
+    .feature-card h3 {
+      margin: 0;
+      font-size: 1.14rem;
+      letter-spacing: -0.01em;
+    }
+
+    .feature-card p {
+      margin: 0.55rem 0 0;
+      color: var(--color-muted);
+      font-size: 0.95rem;
+    }
+
+    .social-proof {
+      background: linear-gradient(180deg, rgba(219, 234, 254, 0.46), rgba(255, 255, 255, 0.96));
+      border-block: 1px solid var(--color-primary-soft);
+    }
+
+    .logo-grid {
+      margin-top: 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.8rem;
+    }
+
+    .logo-card {
+      border: 1px solid var(--color-primary-soft);
+      border-radius: var(--radius-md);
+      background: #ffffff;
+      min-height: 7.3rem;
+      padding: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .logo-card:hover {
+      transform: translateY(-3px);
+      border-color: #93c5fd;
+    }
+
+    .logo-card img {
+      max-height: 3.4rem;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .testimonial-grid {
+      margin-top: 1.5rem;
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .testimonial {
+      margin: 0;
+      background: #ffffff;
+      border: 1px solid var(--color-primary-soft);
+      border-radius: var(--radius-md);
+      padding: 1.1rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .testimonial p {
+      margin: 0;
+      color: #1e293b;
+      font-size: 0.96rem;
+    }
+
+    .testimonial footer {
+      margin-top: 0.7rem;
+      color: var(--color-muted);
+      font-size: 0.84rem;
+      font-weight: 600;
+    }
+
+    .site-footer {
+      background: var(--color-footer);
+      color: #dbeafe;
+      padding-block: 2.8rem 2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      gap: 1.4rem;
+    }
+
+    .footer-title {
+      margin: 0;
+      font-size: 1rem;
+      color: #ffffff;
+    }
+
+    .footer-text {
+      margin: 0.55rem 0 0;
+      color: #bfdbfe;
+      font-size: 0.92rem;
+      max-width: 45ch;
+    }
+
+    .footer-list {
+      margin: 0.6rem 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 0.4rem;
+    }
+
+    .footer-list a {
+      text-decoration: none;
+      color: #dbeafe;
+      transition: color 0.2s ease;
+    }
+
+    .footer-list a:hover,
+    .footer-list a:focus-visible {
+      color: #ffffff;
+    }
+
+    .social-links {
+      margin-top: 0.65rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 2.15rem;
+      min-height: 2.15rem;
+      border-radius: 999px;
+      border: 1px solid rgba(191, 219, 254, 0.4);
+      color: #dbeafe;
+      text-decoration: none;
+      font-size: 0.84rem;
+      font-weight: 700;
+      transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+    }
+
+    .social-links a:hover,
+    .social-links a:focus-visible {
+      background: #dbeafe;
+      color: #0f1f4d;
+      transform: translateY(-2px);
+    }
+
+    .copyright {
+      margin: 1.6rem 0 0;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(191, 219, 254, 0.22);
+      color: #93c5fd;
+      font-size: 0.85rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: transform 0.65s ease, opacity 0.65s ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    :focus-visible {
+      outline: 3px solid #93c5fd;
+      outline-offset: 3px;
+    }
+
+    @media (min-width: 44rem) {
+      .hero-grid {
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 1.2rem;
+      }
+
+      .hero-metrics {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .features-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .testimonial-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .footer-grid {
+        grid-template-columns: 1.4fr 1fr 1fr;
+      }
+    }
+
+    @media (min-width: 66rem) {
+      .section {
+        padding-block: 5.2rem;
+      }
+
+      .features-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .logo-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .brand {
+        font-size: 1.12rem;
+      }
+
+      .nav-list a {
+        font-size: 0.98rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
     }
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <!-- Header -->
-  <header>
-    <img src="https://i.ibb.co/xF8N4g5/loop-logo.png" alt="First Sponsors Logo">
-    <nav>
-      <a href="#features">Features</a>
-      <a href="#cta">Get Started</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  <header class="site-header">
+    <div class="container nav-row">
+      <a class="brand" href="#top" aria-label="First Sponsors homepage">
+        <img src="logo1.PNG" alt="First Sponsors symbol" width="1024" height="683">
+        <span>First Sponsors</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#social-proof">Proof</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1>Connecting Small Creators to Big Opportunities</h1>
-    <p>First Sponsors helps emerging streamers land their first brand deals. Grow your channel, monetize your content, and build long-term partnerships.</p>
-    <button>Join as a Creator</button>
-  </section>
+  <main id="main-content">
+    <section class="hero section" id="top">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <p class="section-kicker">Creator growth platform</p>
+          <h1>Land your first sponsor and scale smarter.</h1>
+          <p class="hero-subheadline">
+            First Sponsors helps emerging creators connect with right-fit brands, launch campaigns quickly,
+            and turn audience momentum into dependable sponsorship revenue.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Book a strategy call</a>
+            <a class="btn btn-secondary" href="#features">See platform benefits</a>
+          </div>
+          <div class="hero-metrics" aria-label="Key platform metrics">
+            <div class="metric">
+              <strong>2x faster</strong>
+              <span>deal onboarding workflows</span>
+            </div>
+            <div class="metric">
+              <strong>95%</strong>
+              <span>campaign milestone visibility</span>
+            </div>
+            <div class="metric">
+              <strong>24/7</strong>
+              <span>creator support cadence</span>
+            </div>
+          </div>
+        </div>
 
-  <!-- Features Section -->
-  <section id="features" class="features">
-    <div class="feature">
-      <img src="https://i.ibb.co/0FVY6pL/partnership.png" alt="Partnership Icon">
-      <h3>Brand Partnerships</h3>
-      <p>We match you with brands that fit your style, audience, and goals, creating meaningful sponsorships.</p>
-    </div>
-    <div class="feature">
-      <img src="https://i.ibb.co/bm1K5jZ/analytics.png" alt="Analytics Icon">
-      <h3>Performance Tracking</h3>
-      <p>Monitor your campaign success with clear analytics to see how brands and audiences respond.</p>
-    </div>
-    <div class="feature">
-      <img src="https://i.ibb.co/mh1v3vC/growth.png" alt="Growth Icon">
-      <h3>Revenue Growth</h3>
-      <p>Start earning from your content without relying solely on streaming platforms or ad revenue.</p>
-    </div>
-  </section>
+        <aside class="hero-panel reveal" aria-label="Why creators choose First Sponsors">
+          <h2>Built for creator-brand alignment</h2>
+          <p>From discovery to reporting, every step is designed for clear communication and reliable outcomes.</p>
+          <ul>
+            <li><strong>Smart brand matching:</strong> Find campaigns that fit your voice and audience.</li>
+            <li><strong>Simple briefs:</strong> Know deliverables, dates, and approval paths up front.</li>
+            <li><strong>Clear reporting:</strong> Show performance with metrics brands understand.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
 
-  <!-- CTA Section -->
-  <section id="cta" class="cta">
-    <h2>Ready to get your first sponsorship?</h2>
-    <button>Sign Up Today</button>
-  </section>
+    <section class="section" id="features">
+      <div class="container">
+        <p class="section-kicker">Features</p>
+        <h2 class="section-heading">Everything you need to win your first sponsorship</h2>
+        <p class="section-intro">
+          A lightweight workflow that keeps creators and sponsors aligned, whether you are closing your first deal
+          or scaling repeat partnerships.
+        </p>
 
-  <!-- Footer -->
-  <footer id="contact">
-    &copy; 2026 First Sponsors. All rights reserved.
+        <div class="features-grid">
+          <article class="feature-card reveal">
+            <span class="icon-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 12h18M12 3v18"></path>
+              </svg>
+            </span>
+            <h3>Brand Match Engine</h3>
+            <p>Filter opportunities by audience fit, content format, and campaign goals.</p>
+          </article>
+
+          <article class="feature-card reveal">
+            <span class="icon-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 19V5M10 19V9M16 19v-6M22 19v-9"></path>
+              </svg>
+            </span>
+            <h3>Live Performance Tracking</h3>
+            <p>Monitor click-through, conversions, and content reach from one dashboard.</p>
+          </article>
+
+          <article class="feature-card reveal">
+            <span class="icon-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16v16H4z"></path>
+                <path d="M8 12h8M12 8v8"></path>
+              </svg>
+            </span>
+            <h3>Campaign Brief Templates</h3>
+            <p>Set expectations with structured deliverables, timelines, and approval checkpoints.</p>
+          </article>
+
+          <article class="feature-card reveal">
+            <span class="icon-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="m4 14 4-4 4 4 8-8"></path>
+                <path d="M20 10V4h-6"></path>
+              </svg>
+            </span>
+            <h3>Revenue Growth Insights</h3>
+            <p>Identify high-performing sponsor categories and negotiate stronger follow-up deals.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section social-proof" id="social-proof">
+      <div class="container">
+        <p class="section-kicker">Social proof</p>
+        <h2 class="section-heading">A brand identity creators remember</h2>
+        <p class="section-intro">
+          Your uploaded First Sponsors logo variants are integrated below, alongside early creator feedback.
+        </p>
+
+        <div class="logo-grid" aria-label="First Sponsors logo variations">
+          <figure class="logo-card reveal">
+            <img src="logo1.PNG" alt="First Sponsors symbol logo" loading="lazy" decoding="async" width="1024" height="683">
+          </figure>
+          <figure class="logo-card reveal">
+            <img src="logo2.PNG" alt="First Sponsors wordmark logo" loading="lazy" decoding="async" width="1024" height="683">
+          </figure>
+          <figure class="logo-card reveal">
+            <img src="logo3.PNG" alt="First Sponsors stacked logo" loading="lazy" decoding="async" width="1024" height="683">
+          </figure>
+          <figure class="logo-card reveal">
+            <img src="logo4.PNG" alt="First Sponsors horizontal logo" loading="lazy" decoding="async" width="1024" height="683">
+          </figure>
+        </div>
+
+        <div class="testimonial-grid" aria-label="Creator testimonials">
+          <blockquote class="testimonial reveal">
+            <p>
+              "First Sponsors gave me a clear path from inbound interest to a signed deal.
+              I finally have a sponsorship process that scales."
+            </p>
+            <footer>- Placeholder Creator, Lifestyle Channel</footer>
+          </blockquote>
+          <blockquote class="testimonial reveal">
+            <p>
+              "The reporting is simple, fast, and sponsor-friendly. It helped me close a second campaign in under a month."
+            </p>
+            <footer>- Placeholder Creator, Gaming Streamer</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <section>
+          <h2 class="footer-title">First Sponsors</h2>
+          <p class="footer-text">
+            Helping emerging creators build their first long-term brand partnerships with confidence.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="footer-title">Contact</h2>
+          <ul class="footer-list">
+            <li><a href="mailto:hello@firstsponsors.com">hello@firstsponsors.com</a></li>
+            <li><a href="tel:+10000000000">+1 (000) 000-0000</a></li>
+            <li>Remote-first, serving creators worldwide</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="footer-title">Follow</h2>
+          <div class="social-links" aria-label="Social media links">
+            <a href="https://www.linkedin.com" aria-label="LinkedIn">in</a>
+            <a href="https://www.instagram.com" aria-label="Instagram">ig</a>
+            <a href="https://x.com" aria-label="X (Twitter)">x</a>
+          </div>
+        </section>
+      </div>
+      <p class="copyright">&copy; <span id="year">2026</span> First Sponsors. All rights reserved.</p>
+    </div>
   </footer>
 
+  <script>
+    (function () {
+      var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      var internalLinks = document.querySelectorAll('a[href^="#"]');
+
+      internalLinks.forEach(function (link) {
+        link.addEventListener("click", function (event) {
+          var targetId = link.getAttribute("href");
+          if (!targetId || targetId === "#") {
+            return;
+          }
+
+          var target = document.querySelector(targetId);
+          if (!target) {
+            return;
+          }
+
+          event.preventDefault();
+          target.scrollIntoView({
+            behavior: prefersReducedMotion ? "auto" : "smooth",
+            block: "start"
+          });
+          history.pushState(null, "", targetId);
+        });
+      });
+
+      var revealNodes = document.querySelectorAll(".reveal");
+      if (!prefersReducedMotion && "IntersectionObserver" in window) {
+        var revealObserver = new IntersectionObserver(function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.2
+        });
+
+        revealNodes.forEach(function (node) {
+          revealObserver.observe(node);
+        });
+      } else {
+        revealNodes.forEach(function (node) {
+          node.classList.add("is-visible");
+        });
+      }
+
+      var yearElement = document.getElementById("year");
+      if (yearElement) {
+        yearElement.textContent = String(new Date().getFullYear());
+      }
+    })();
+  </script>
 </body>
 </html>
