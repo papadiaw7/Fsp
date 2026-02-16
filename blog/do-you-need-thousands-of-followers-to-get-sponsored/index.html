@@ -126,7 +126,15 @@
       display: grid;
       place-items: center;
     }
-    figure img { width: min(460px, 95%); }
+    figure picture {
+      width: 100%;
+      display: grid;
+      place-items: center;
+    }
+    figure img {
+      width: min(460px, 95%);
+      margin-inline: auto;
+    }
     figure figcaption {
       margin-top: 0.6rem;
       color: var(--muted);
