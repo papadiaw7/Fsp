@@ -752,7 +752,7 @@
             We personally review every creator and respond within 24 hours.
           </p>
         </div>
-        <form id="application-form" class="apply-form" data-endpoint="" novalidate aria-describedby="form-status">
+        <form id="application-form" class="apply-form" action="https://formspree.io/f/mykdjzkq" method="POST" data-endpoint="https://formspree.io/f/mykdjzkq" novalidate aria-describedby="form-status">
           <div class="field-grid">
             <div class="field-group">
               <label for="name">Name</label>
@@ -848,14 +848,14 @@
     (function () {
       var form = document.getElementById("application-form");
       var status = document.getElementById("form-status");
-      var endpoint = form ? form.getAttribute("data-endpoint") : "";
+      var endpoint = form ? (form.getAttribute("data-endpoint") || form.getAttribute("action") || "") : "";
 
       if (form && status) {
         form.addEventListener("submit", async function (event) {
           event.preventDefault();
           if (!form.reportValidity()) return;
 
-          var payload = Object.fromEntries(new FormData(form).entries());
+          var payload = new FormData(form);
           status.textContent = "Submitting your details...";
 
           if (!endpoint) {
@@ -867,8 +867,8 @@
           try {
             var response = await fetch(endpoint, {
               method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify(payload)
+              headers: { "Accept": "application/json" },
+              body: payload
             });
 
             if (!response.ok) throw new Error("Request failed");
