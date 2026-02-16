@@ -182,6 +182,27 @@
     .cta:hover,
     .cta:focus-visible { background: #eff6ff; }
 
+    .cta-split {
+      flex-direction: column;
+      gap: 0.14rem;
+      text-align: center;
+      line-height: 1.12;
+      white-space: normal;
+      max-width: 19.8rem;
+    }
+
+    .cta-split .cta-main {
+      display: block;
+    }
+
+    .cta-split .cta-note {
+      display: block;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      opacity: 0.9;
+    }
+
     .site-footer {
       background: #0a1f5c;
       color: #dbeafe;
@@ -339,7 +360,10 @@
       <aside class="cta-box" aria-label="Apply call to action">
         <p class="cta-title">Get your first brand deal moving</p>
         <p>Apply in under a minute. We review every creator and respond within 24 hours.</p>
-        <a class="cta" href="../../index.html#apply">Apply for a Sponsor Match (It Only Takes 60s)</a>
+        <a class="cta cta-split" href="../../index.html#apply">
+          <span class="cta-main">Apply for a Sponsor Match</span>
+          <span class="cta-note">(It Only Takes 60 Seconds)</span>
+        </a>
       </aside>
     </div>
   </main>
